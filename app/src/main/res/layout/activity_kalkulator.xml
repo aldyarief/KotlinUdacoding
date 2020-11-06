@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="horizontal"
+    tools:context=".Kalkulator">
+
+    <LinearLayout
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_width="350dp"
+        android:layout_height="300dp"
+        android:background="#FFFF">
+
+        <EditText
+            android:id="@+id/edtinggi"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:backgroundTint="#1E90FF"
+            android:hint="Isikan tinggi badan (m)"
+            android:inputType="number|numberDecimal"
+            android:singleLine="false"
+            android:textColor="#000"
+            android:textColorHint="#000" />
+
+        <EditText
+            android:id="@+id/edberat"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:hint="Isikan berat badan (kg)"
+            android:inputType="number"
+            android:textColor="#000"
+            android:backgroundTint="#1E90FF"
+            android:textColorHint="#000"
+            android:layout_gravity="center" />
+
+        <Button
+            android:id="@+id/btnHitung"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:text="CEK BMI"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:background="#4169E1" />
+
+        <TextView
+            android:id="@+id/txhasil"
+            android:layout_width="350dp"
+            android:layout_height="80dp"
+            android:textColor="#4169E1"
+            android:textSize="28sp"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            app:fontFamily="sans-serif" />
+    </LinearLayout>
+
+
+</LinearLayout>
