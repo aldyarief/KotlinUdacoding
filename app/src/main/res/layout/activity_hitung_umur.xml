@@ -7,17 +7,13 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
 
-    <TextView
-        android:text="Tanggal Lahir :"
-        android:id="@+id/TextView01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
 
     <EditText
         android:text=""
         android:id="@+id/txtDate"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:inputType="number"/>
     <Button
         android:text="Hitung Umur"
         android:layout_height="wrap_content"
@@ -25,13 +21,9 @@
         android:id="@+id/btnHitungUmur"/>
     <TextView
         android:text="Umur :"
-        android:id="@+id/TextView02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <EditText
-        android:text=""
-        android:id="@+id/txtUmur"
-        android:layout_width="fill_parent"
+        android:id="@+id/txhasil"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:editable="false"/>
+        android:gravity="center"/>
+
 </LinearLayout>

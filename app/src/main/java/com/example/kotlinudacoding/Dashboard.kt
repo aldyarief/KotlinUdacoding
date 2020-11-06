@@ -23,5 +23,11 @@ class Dashboard : AppCompatActivity() {
             startActivity(intent)
         }
 
+        umur!!.setOnClickListener {
+            val intent = Intent(this@Dashboard, HitungUmur::class.java)
+            finish()
+            startActivity(intent)
+        }
+
     }
 }
