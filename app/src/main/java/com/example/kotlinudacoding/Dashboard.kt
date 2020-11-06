@@ -9,6 +9,7 @@ import android.widget.LinearLayout
 class Dashboard : AppCompatActivity() {
     var kalkulator: LinearLayout?= null
     var umur: LinearLayout?= null
+    var login: LinearLayout?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,6 +17,7 @@ class Dashboard : AppCompatActivity() {
 
         kalkulator = findViewById<View>(R.id.kalkukator) as LinearLayout
         umur = findViewById<View>(R.id.umur) as LinearLayout
+        login = findViewById<View>(R.id.login) as LinearLayout
 
         kalkulator!!.setOnClickListener {
             val intent = Intent(this@Dashboard, Kalkulator::class.java)
@@ -25,6 +27,12 @@ class Dashboard : AppCompatActivity() {
 
         umur!!.setOnClickListener {
             val intent = Intent(this@Dashboard, HitungUmur::class.java)
+            finish()
+            startActivity(intent)
+        }
+
+        login!!.setOnClickListener {
+            val intent = Intent(this@Dashboard, CekLogin::class.java)
             finish()
             startActivity(intent)
         }

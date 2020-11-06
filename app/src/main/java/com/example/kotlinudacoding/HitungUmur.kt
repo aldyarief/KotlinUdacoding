@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.util.*
 
@@ -23,12 +24,18 @@ class HitungUmur : AppCompatActivity() {
         txView = findViewById<View>(R.id.txhasil) as TextView
 
         hitung!!.setOnClickListener {
-            val tahunlahir = txumur!!.text.toString().toInt()
-            val tahunini = Calendar.getInstance().get(Calendar.YEAR)
+            val tahun = txumur!!.text.toString().trim { it <= ' ' }
 
-            val hasil = tahunini - tahunlahir
+            if (tahun.isEmpty()) {
+                val tahunlahir = tahun.toInt()
+                val tahunini = Calendar.getInstance().get(Calendar.YEAR)
 
-            txView!!.text = hasil!!.toString()
+                val hasil = tahunini - tahunlahir
+
+                txView!!.text = hasil!!.toString()
+            } else {
+                Toast.makeText(this@HitungUmur, "Tahun Lahir tidak boleh kosong", Toast.LENGTH_SHORT).show()
+            }
         }
 
     }
