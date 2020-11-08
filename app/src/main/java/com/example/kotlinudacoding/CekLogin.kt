@@ -24,13 +24,17 @@ class CekLogin : AppCompatActivity() {
             val username = eduser!!.text.toString().trim { it <= ' ' }
             val pass = edpass!!.text.toString().trim { it <= ' ' }
 
-            if (username.equals("aldry") && pass.equals("a")) {
-                Toast.makeText(this@CekLogin, "Selamat Datang $username", Toast.LENGTH_SHORT).show()
-                val intent = Intent(this@CekLogin, Dashboard::class.java)
-                finish()
-                startActivity(intent)
-            }
 
+            if (username.isEmpty() && pass.isEmpty() ) {
+                if (username.equals("aldry") && pass.equals("a")) {
+                    Toast.makeText(this@CekLogin, "Selamat Datang $username", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@CekLogin, Dashboard::class.java)
+                    finish()
+                    startActivity(intent)
+                }
+            } else {
+                Toast.makeText(this@CekLogin, "Data tidak boleh kosong", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }

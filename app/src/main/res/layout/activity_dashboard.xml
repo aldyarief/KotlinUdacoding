@@ -127,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:layout_marginTop="2dp"
-                android:text="Hitung Umur"/>
+                android:text="Recyclerview"/>
         </LinearLayout>
     </LinearLayout>
 
@@ -161,7 +161,7 @@
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
                 android:layout_marginTop="2dp"
-                android:text="Kalkulator BMI"/>
+                android:text="ListView"/>
         </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

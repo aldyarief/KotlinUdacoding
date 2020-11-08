@@ -1,4 +1,4 @@
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,30 +6,34 @@
     android:layout_height="match_parent"
     android:gravity="center"
     android:orientation="horizontal"
+    android:padding="20dp"
     tools:context=".CekLogin">
+
 
     <LinearLayout
         android:clipToPadding="false"
         android:gravity="center"
         android:orientation="vertical"
-        android:layout_width="350dp"
-        android:layout_height="300dp"
-        android:background="#FFFF">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
+        android:background="#03A9F4">
 
         <EditText
             android:id="@+id/eduser"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:backgroundTint="#1E90FF"
             android:hint="Username"
             android:singleLine="false"
             android:textColor="#000"
-            android:textColorHint="#000" />
+            android:textColorHint="#000"
+            android:layout_marginBottom="20dp"/>
 
         <EditText
             android:id="@+id/edpass"
-            android:layout_width="300dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
             android:inputType="textPassword"
@@ -40,13 +44,12 @@
 
         <Button
             android:id="@+id/btnLogin"
-            android:layout_width="140dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Login"
-            android:layout_marginLeft="10dp"
             android:layout_marginTop="10dp"
             android:layout_gravity="center"
             android:background="#4169E1" />
 
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

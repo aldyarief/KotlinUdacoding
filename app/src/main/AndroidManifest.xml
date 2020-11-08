@@ -9,8 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CekLogin"></activity>
-        <activity android:name=".HitungUmur" />
         <activity android:name=".Dashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,6 +17,11 @@
             </intent-filter>
         </activity>
         <activity android:name=".Kalkulator" />
+        <activity android:name=".Recyclerview" />
+        <activity android:name=".CekLogin" />
+        <activity android:name=".HitungUmur" />
+        <activity android:name=".ImplementasiListview"/>
+
     </application>
 
 </manifest>

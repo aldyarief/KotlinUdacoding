@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
+import android.widget.ListView
 
 class Dashboard : AppCompatActivity() {
     var kalkulator: LinearLayout?= null
     var umur: LinearLayout?= null
     var login: LinearLayout?= null
+    var listview: LinearLayout?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -18,6 +20,7 @@ class Dashboard : AppCompatActivity() {
         kalkulator = findViewById<View>(R.id.kalkukator) as LinearLayout
         umur = findViewById<View>(R.id.umur) as LinearLayout
         login = findViewById<View>(R.id.login) as LinearLayout
+        listview = findViewById<View>(R.id.list) as LinearLayout
 
         kalkulator!!.setOnClickListener {
             val intent = Intent(this@Dashboard, Kalkulator::class.java)
@@ -33,6 +36,12 @@ class Dashboard : AppCompatActivity() {
 
         login!!.setOnClickListener {
             val intent = Intent(this@Dashboard, CekLogin::class.java)
+            finish()
+            startActivity(intent)
+        }
+
+        listview!!.setOnClickListener {
+            val intent = Intent(this@Dashboard, ImplementasiListview::class.java)
             finish()
             startActivity(intent)
         }
