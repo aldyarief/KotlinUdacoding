@@ -3,18 +3,17 @@ package com.example.kotlinudacoding
 import android.app.Dialog
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.view.Window
 import android.widget.Button
 import android.widget.TextView
 import com.example.kotlinudacoding.adapter.ListViewAdapter
 import com.example.kotlinudacoding.model.Anggota
-import kotlinx.android.synthetic.main.activity_listview.*
+import kotlinx.android.synthetic.main.activity_implementasilistview.*
 
 class ImplementasiListview : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_listview)
+        setContentView(R.layout.activity_implementasilistview)
 
         val listAnggota = ArrayList<Anggota>()
         listAnggota.add(Anggota("Supri","Jl.Kenangan","0811111",R.drawable.apel))

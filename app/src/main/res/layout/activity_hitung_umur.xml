@@ -1,29 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-
-    <EditText
-        android:text=""
-        android:id="@+id/txtDate"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:inputType="number"/>
-    <Button
-        android:text="Hitung Umur"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:id="@+id/btnHitungUmur"/>
-    <TextView
-        android:text="Umur :"
-        android:id="@+id/txhasil"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"/>
+        android:orientation="vertical"
+        android:padding="30dp"
+        android:background="#03A9F4">
 
-</LinearLayout>
+        <EditText
+            android:text="Isikan Tahun"
+            android:id="@+id/txtDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"/>
+        <Button
+            android:text="Hitung Umur"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/btnHitungUmur"/>
+        <TextView
+            android:text="Umur :"
+            android:id="@+id/txhasil"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"/>
+    </LinearLayout>>
+</RelativeLayout>
