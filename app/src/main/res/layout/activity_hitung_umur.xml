@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:gravity="center"
+    android:padding="20dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -13,10 +14,15 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:padding="30dp"
-        android:background="#03A9F4">
+        android:background="#48a932">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"/>
 
         <EditText
-            android:text="Isikan Tahun"
+            android:hint="Isikan Tahun"
             android:id="@+id/txtDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -25,12 +31,16 @@
             android:text="Hitung Umur"
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:background="#4169E1"
+            android:layout_marginTop="20dp"
             android:id="@+id/btnHitungUmur"/>
         <TextView
-            android:text="Umur :"
             android:id="@+id/txhasil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"/>
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:textSize="20sp"
+            android:textColor="#FFF"/>
     </LinearLayout>>
 </RelativeLayout>

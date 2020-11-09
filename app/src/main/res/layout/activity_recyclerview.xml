@@ -10,6 +10,8 @@
         android:id="@+id/list"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
+        tools:listitem="@layout/list_item"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

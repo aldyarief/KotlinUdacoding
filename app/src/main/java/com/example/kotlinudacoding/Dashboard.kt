@@ -12,6 +12,7 @@ class Dashboard : AppCompatActivity() {
     var umur: LinearLayout?= null
     var login: LinearLayout?= null
     var listview: LinearLayout?= null
+    var recycler: LinearLayout?= null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +22,7 @@ class Dashboard : AppCompatActivity() {
         umur = findViewById<View>(R.id.umur) as LinearLayout
         login = findViewById<View>(R.id.login) as LinearLayout
         listview = findViewById<View>(R.id.list) as LinearLayout
+        recycler = findViewById<View>(R.id.recyler) as LinearLayout
 
         kalkulator!!.setOnClickListener {
             val intent = Intent(this@Dashboard, Kalkulator::class.java)
@@ -42,6 +44,12 @@ class Dashboard : AppCompatActivity() {
 
         listview!!.setOnClickListener {
             val intent = Intent(this@Dashboard, ImplementasiListview::class.java)
+            finish()
+            startActivity(intent)
+        }
+
+        recycler!!.setOnClickListener {
+            val intent = Intent(this@Dashboard, Recyclerview::class.java)
             finish()
             startActivity(intent)
         }

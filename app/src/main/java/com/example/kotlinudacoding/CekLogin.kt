@@ -25,16 +25,25 @@ class CekLogin : AppCompatActivity() {
             val pass = edpass!!.text.toString().trim { it <= ' ' }
 
 
-            if (username.isEmpty() && pass.isEmpty() ) {
+            if (!username.isEmpty() && !pass.isEmpty() ) {
                 if (username.equals("aldry") && pass.equals("a")) {
                     Toast.makeText(this@CekLogin, "Selamat Datang $username", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this@CekLogin, Dashboard::class.java)
                     finish()
                     startActivity(intent)
+                } else {
+                    Toast.makeText(this@CekLogin, "Anda tidak bisa masuk", Toast.LENGTH_SHORT).show()
                 }
             } else {
                 Toast.makeText(this@CekLogin, "Data tidak boleh kosong", Toast.LENGTH_SHORT).show()
             }
         }
+    }
+
+
+    override fun onBackPressed() {
+        val intent = Intent(this@CekLogin,Dashboard ::class.java)
+        finish()
+        startActivity(intent)
     }
 }

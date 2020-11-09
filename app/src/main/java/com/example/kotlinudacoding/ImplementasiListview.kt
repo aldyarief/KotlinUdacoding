@@ -1,6 +1,7 @@
 package com.example.kotlinudacoding
 
 import android.app.Dialog
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
@@ -46,5 +47,11 @@ class ImplementasiListview : AppCompatActivity() {
             }.show()
         }
 
+    }
+
+    override fun onBackPressed() {
+        val intent = Intent(this@ImplementasiListview,Dashboard ::class.java)
+        finish()
+        startActivity(intent)
     }
 }

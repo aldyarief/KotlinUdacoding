@@ -17,19 +17,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="30dp"
-        android:background="#03A9F4">
+        android:background="#48a932">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/logo"/>
 
         <EditText
             android:id="@+id/edtinggi"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:backgroundTint="#1E90FF"
             android:hint="Isikan tinggi badan (m)"
             android:padding="10dp"
-            android:inputType="number|numberDecimal"
-            android:textColor="#000"
-            android:textColorHint="#000" />
+            android:inputType="number|numberDecimal" />
 
         <EditText
             android:id="@+id/edberat"
@@ -37,10 +39,7 @@
             android:layout_height="wrap_content"
             android:hint="Isikan berat badan (kg)"
             android:inputType="number"
-            android:textColor="#000"
             android:padding="10dp"
-            android:backgroundTint="#1E90FF"
-            android:textColorHint="#000"
             android:layout_gravity="center" />
 
 

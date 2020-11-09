@@ -1,5 +1,6 @@
 package com.example.kotlinudacoding
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -43,14 +44,26 @@ class Kalkulator : AppCompatActivity() {
                 txView!!.text = statusBadan
 
             } else if (tinggi.isEmpty()) {
-                Toast.makeText(this@Kalkulator, "Tinggi badan tidak boleh kosong", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@Kalkulator,
+                    "Tinggi badan tidak boleh kosong",
+                    Toast.LENGTH_SHORT
+                ).show()
             } else if (berat.isEmpty()) {
-                Toast.makeText(this@Kalkulator, "Berat badan tidak boleh kosong", Toast.LENGTH_SHORT).show()
+                Toast.makeText(
+                    this@Kalkulator,
+                    "Berat badan tidak boleh kosong",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
 
 
         }
     }
-
+    override fun onBackPressed() {
+        val intent = Intent(this@Kalkulator,Dashboard ::class.java)
+        finish()
+        startActivity(intent)
+    }
 
 }

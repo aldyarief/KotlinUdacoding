@@ -1,5 +1,6 @@
 package com.example.kotlinudacoding
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -26,17 +27,23 @@ class HitungUmur : AppCompatActivity() {
         hitung!!.setOnClickListener {
             val tahun = txumur!!.text.toString().trim { it <= ' ' }
 
-            if (tahun.isEmpty()) {
+            if (!tahun.isEmpty()) {
                 val tahunlahir = tahun.toInt()
                 val tahunini = Calendar.getInstance().get(Calendar.YEAR)
 
                 val hasil = tahunini - tahunlahir
 
-                txView!!.text = hasil!!.toString()
+                txView!!.text = "Umur anda adalah $hasil tahun"
             } else {
                 Toast.makeText(this@HitungUmur, "Tahun Lahir tidak boleh kosong", Toast.LENGTH_SHORT).show()
             }
         }
 
+    }
+
+    override fun onBackPressed() {
+        val intent = Intent(this@HitungUmur,Dashboard ::class.java)
+        finish()
+        startActivity(intent)
     }
 }
