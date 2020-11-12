@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Dashboard"
     android:orientation="vertical"
-    android:padding="0dp"
+    android:padding="10dp"
     android:background="#FFFF"
     android:gravity="top">
     <TextView
@@ -19,60 +19,82 @@
         android:text="Mentoring Week 2"
         android:textSize="30sp"
         android:layout_marginBottom="10dp"/>
+
     <LinearLayout
         android:clipToPadding="false"
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFF"
+        android:layout_height="180dp"
         android:id="@+id/menu1"
-        android:layout_below="@id/judul"
-        android:layout_marginTop="30dp">
+        android:layout_below="@id/judul">
 
-        <LinearLayout
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:orientation="vertical"
-            android:id="@+id/kalkukator"
-            android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center">
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_calculator"
-                android:padding="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:layout_marginTop="2dp"
-                android:text="Kalkulator BMI"/>
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:orientation="vertical"
-            android:id="@+id/umur"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center">
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_umur"
-                android:padding="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:layout_marginTop="2dp"
-                android:text="Hitung Umur"/>
-        </LinearLayout>
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="20dp"
+            android:layout_marginRight="20dp">
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:orientation="vertical"
+                android:id="@+id/kalkukator"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ic_calculator"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:text="Kalkulator BMI"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="20dp">
+
+                <LinearLayout
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:orientation="vertical"
+                    android:id="@+id/umur"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:gravity="center">
+                    <ImageView
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/ic_umur"
+                        android:padding="10dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:layout_marginTop="2dp"
+                        android:text="Hitung Umur"/>
+                </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 
     <LinearLayout
@@ -80,55 +102,76 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFF"
+        android:layout_height="180dp"
+        android:layout_marginTop="30dp"
         android:id="@+id/menu2"
-        android:layout_below="@id/menu1"
-        android:layout_marginTop="30dp">
+        android:layout_below="@id/menu1">
 
-        <LinearLayout
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:orientation="vertical"
-            android:id="@+id/login"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center">
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_login"
-                android:padding="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:layout_marginTop="2dp"
-                android:text="Login Sederhana"/>
-        </LinearLayout>
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="20dp"
+            android:layout_marginRight="20dp">
 
-        <LinearLayout
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:orientation="vertical"
-            android:id="@+id/recyler"
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:orientation="vertical"
+                android:id="@+id/login"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ic_login"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:text="Login Sederhana"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginRight="10dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center">
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_umur"
-                android:padding="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:layout_marginTop="2dp"
-                android:text="Recyclerview"/>
-        </LinearLayout>
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="20dp">
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:orientation="vertical"
+                android:id="@+id/recyler"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ic_umur"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:text="Recyclerview"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 
     <LinearLayout
@@ -136,32 +179,43 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FFFF"
+        android:layout_height="180dp"
+        android:layout_marginTop="30dp"
         android:id="@+id/menu3"
-        android:layout_below="@id/menu2"
-        android:layout_marginTop="30dp">
+        android:layout_below="@id/menu2">
 
-        <LinearLayout
-            android:layout_width="150dp"
-            android:layout_height="150dp"
-            android:orientation="vertical"
-            android:id="@+id/list"
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:clickable="true"
             android:foreground="?android:attr/selectableItemBackground"
-            android:layout_marginRight="5dp"
-            android:layout_marginBottom="10dp"
-            android:gravity="center">
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_calculator"
-                android:padding="10dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:layout_marginTop="2dp"
-                android:text="ListView"/>
-        </LinearLayout>
+            app:cardBackgroundColor="#FFFFFF"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="20dp">
+
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:orientation="vertical"
+                android:id="@+id/list"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="10dp"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:src="@drawable/ic_calculator"
+                    android:padding="10dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="2dp"
+                    android:text="ListView"/>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
+
+
 </RelativeLayout>
