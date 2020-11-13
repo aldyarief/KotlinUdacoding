@@ -30,12 +30,15 @@ class HitungUmur : AppCompatActivity() {
             if (!tahun.isEmpty()) {
                 val tahunlahir = tahun.toInt()
                 val tahunini = Calendar.getInstance().get(Calendar.YEAR)
+                if (tahunlahir > tahunini) {
+                    Toast.makeText(this@HitungUmur, "Tahun lahir tidak boleh lebih besar dari tahun saat ini.", Toast.LENGTH_SHORT).show()
+                } else {
+                    val hasil = tahunini - tahunlahir
+                    txView!!.text = "Umur anda adalah $hasil tahun"
+                }
 
-                val hasil = tahunini - tahunlahir
-
-                txView!!.text = "Umur anda adalah $hasil tahun"
             } else {
-                Toast.makeText(this@HitungUmur, "Tahun Lahir tidak boleh kosong", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@HitungUmur, "Tahun lahir tidak boleh kosong", Toast.LENGTH_SHORT).show()
             }
         }
 
