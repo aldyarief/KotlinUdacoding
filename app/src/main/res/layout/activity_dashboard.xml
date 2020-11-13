@@ -9,16 +9,28 @@
     android:padding="10dp"
     android:background="#FFFF"
     android:gravity="top">
+
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/judul2"
+        android:textStyle="bold"
+        android:gravity="left"
+        android:text="Dashboard"
+        android:textSize="20sp"
+        android:textColor="#0347F4"
+        android:layout_marginBottom="10dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/judul"
         android:textStyle="bold"
-        android:layout_marginTop="2dp"
         android:gravity="center"
         android:text="Mentoring Week 2"
-        android:textSize="30sp"
-        android:layout_marginBottom="10dp"/>
+        android:textSize="20sp"
+        android:layout_below="@id/judul2"
+        android:layout_marginBottom="30dp"/>
 
     <LinearLayout
         android:clipToPadding="false"
@@ -103,7 +115,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/menu2"
         android:layout_below="@id/menu1">
 
@@ -180,7 +192,7 @@
         android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:id="@+id/menu3"
         android:layout_below="@id/menu2">
 
