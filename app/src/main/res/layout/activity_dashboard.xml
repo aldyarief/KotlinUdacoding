@@ -10,16 +10,28 @@
     android:background="#FFFF"
     android:gravity="top">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/judul2"
-        android:textStyle="bold"
-        android:gravity="left"
-        android:text="Dashboard"
-        android:textSize="20sp"
-        android:textColor="#0347F4"
-        android:layout_marginBottom="10dp"/>
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:gravity="left"
+            android:text="Dashboard"
+            android:textSize="20sp"
+            android:textColor="#0347F4"
+            android:layout_marginRight="5dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="6dp"
+            android:layout_gravity="center"
+            android:background="#0347F4"/>
+    </LinearLayout>
 
     <TextView
         android:layout_width="match_parent"
@@ -40,7 +52,6 @@
         android:layout_height="180dp"
         android:id="@+id/menu1"
         android:layout_below="@id/judul">
-
 
         <com.google.android.material.card.MaterialCardView
             android:layout_width="wrap_content"
@@ -229,5 +240,17 @@
         </com.google.android.material.card.MaterialCardView>
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_below="@id/menu3">
 
+        <View
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:layout_height="6dp"
+            android:layout_gravity="center"
+            android:background="#0347F4"/>
+    </LinearLayout>
 </RelativeLayout>
