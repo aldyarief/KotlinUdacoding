@@ -1,6 +1,5 @@
 package com.example.kotlinudacoding
 
-import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -47,7 +46,7 @@ class Recyclerview : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        val intent = Intent(this@Recyclerview,Dashboard ::class.java)
+        val intent = Intent(this@Recyclerview,DashboardWeek2 ::class.java)
         finish()
         startActivity(intent)
     }

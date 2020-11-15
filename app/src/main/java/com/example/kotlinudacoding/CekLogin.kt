@@ -28,7 +28,7 @@ class CekLogin : AppCompatActivity() {
             if (!username.isEmpty() && !pass.isEmpty() ) {
                 if (username.equals("aldry") && pass.equals("a")) {
                     Toast.makeText(this@CekLogin, "Selamat Datang $username", Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this@CekLogin, Dashboard::class.java)
+                    val intent = Intent(this@CekLogin, DashboardWeek2::class.java)
                     finish()
                     startActivity(intent)
                 } else {
@@ -42,7 +42,7 @@ class CekLogin : AppCompatActivity() {
 
 
     override fun onBackPressed() {
-        val intent = Intent(this@CekLogin,Dashboard ::class.java)
+        val intent = Intent(this@CekLogin,DashboardWeek2 ::class.java)
         finish()
         startActivity(intent)
     }

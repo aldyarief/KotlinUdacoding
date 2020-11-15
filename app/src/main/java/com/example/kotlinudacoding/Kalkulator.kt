@@ -61,7 +61,7 @@ class Kalkulator : AppCompatActivity() {
         }
     }
     override fun onBackPressed() {
-        val intent = Intent(this@Kalkulator,Dashboard ::class.java)
+        val intent = Intent(this@Kalkulator,DashboardWeek2 ::class.java)
         finish()
         startActivity(intent)
     }

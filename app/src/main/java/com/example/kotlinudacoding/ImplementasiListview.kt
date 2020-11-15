@@ -50,7 +50,7 @@ class ImplementasiListview : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        val intent = Intent(this@ImplementasiListview,Dashboard ::class.java)
+        val intent = Intent(this@ImplementasiListview,DashboardWeek2 ::class.java)
         finish()
         startActivity(intent)
     }

@@ -45,7 +45,7 @@ class HitungUmur : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        val intent = Intent(this@HitungUmur,Dashboard ::class.java)
+        val intent = Intent(this@HitungUmur,DashboardWeek2 ::class.java)
         finish()
         startActivity(intent)
     }
