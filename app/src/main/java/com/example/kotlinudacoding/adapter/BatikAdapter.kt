@@ -29,6 +29,8 @@ class BatikAdapter(var data: ArrayList<Batik>) : RecyclerView.Adapter<BatikAdapt
     override fun onBindViewHolder(holder: BatikHolder, position: Int) {
         holder.nama.text = data.get(position)?.namaTempat
         //holder.daerah.text = data.get(position)?.daerahBatik
+
+        
     }
 
     override fun getItemCount(): Int {

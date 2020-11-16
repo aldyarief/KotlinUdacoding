@@ -1,8 +1,11 @@
 package com.example.kotlinudacoding
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinudacoding.adapter.BatikAdapter
 import com.example.kotlinudacoding.model.Batik
 import com.example.kotlinudacoding.model.ResponseServer
@@ -12,11 +15,23 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
+
 class BatikApps : AppCompatActivity() {
+    private var recyclerView: RecyclerView? = null
+    private var adapter: BatikAdapter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_batikapps)
 
+        recyclerView = findViewById<View>(R.id.listbatik) as RecyclerView
+
+        adapter = BatikAdapter(ArrayList<Batik>())
+
+        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this@BatikApps)
+
+        recyclerView!!.setLayoutManager(layoutManager)
+
+        recyclerView!!.setAdapter(adapter)
 
         ConfigNetwork.getRetrofit().getDataBatik().enqueue(object : Callback<ResponseServer> {
             override fun onResponse(
