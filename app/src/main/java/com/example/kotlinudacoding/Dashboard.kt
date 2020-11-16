@@ -24,7 +24,7 @@ class Dashboard : AppCompatActivity() {
         }
 
         week3!!.setOnClickListener {
-            val intent = Intent(this@Dashboard, HitungUmur::class.java)
+            val intent = Intent(this@Dashboard, BatikApps::class.java)
             finish()
             startActivity(intent)
         }
