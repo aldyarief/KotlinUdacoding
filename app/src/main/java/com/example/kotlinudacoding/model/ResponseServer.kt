@@ -2,5 +2,5 @@ package com.example.kotlinudacoding.model
 
 class ResponseServer {
 
-    var data : ArrayList<HasilItem>? = null
+    var data : ArrayList<Batik>? = null
 }

@@ -6,10 +6,9 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kotlinudacoding.R
 import com.example.kotlinudacoding.model.Batik
-import com.example.kotlinudacoding.model.HasilItem
 import kotlinx.android.synthetic.main.item_batik.view.*
 
-class BatikAdapter(var data: ArrayList<HasilItem>) : RecyclerView.Adapter<BatikAdapter.BatikHolder>() {
+class BatikAdapter(var data: ArrayList<Batik>) : RecyclerView.Adapter<BatikAdapter.BatikHolder>() {
     class BatikHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val img = itemView.gambar
@@ -28,7 +27,7 @@ class BatikAdapter(var data: ArrayList<HasilItem>) : RecyclerView.Adapter<BatikA
     }
 
     override fun onBindViewHolder(holder: BatikHolder, position: Int) {
-        holder.nama.text = data.get(position)?.namaBatik
+        holder.nama.text = data.get(position)?.namaTempat
         //holder.daerah.text = data.get(position)?.daerahBatik
     }
 

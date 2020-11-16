@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.kotlinudacoding.adapter.BatikAdapter
-import com.example.kotlinudacoding.model.HasilItem
+import com.example.kotlinudacoding.model.Batik
 import com.example.kotlinudacoding.model.ResponseServer
 import com.example.kotlinudacoding.network.ConfigNetwork
 import kotlinx.android.synthetic.main.activity_batikapps.*
@@ -33,9 +33,8 @@ class BatikApps : AppCompatActivity() {
         })
     }
 
-    private fun showdata(data: ArrayList<HasilItem>) {
+    private fun showdata(data: ArrayList<Batik>) {
         listbatik.adapter = BatikAdapter(data)
-
     }
 
 }

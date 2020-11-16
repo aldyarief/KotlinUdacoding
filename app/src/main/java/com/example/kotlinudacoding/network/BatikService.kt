@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface BatikService {
 
-    @GET("api?action=all")
+    @GET("api?action=findAll")
     fun getDataBatik(): Call<ResponseServer>
 
 
