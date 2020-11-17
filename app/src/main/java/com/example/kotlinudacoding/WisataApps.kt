@@ -33,7 +33,7 @@ class WisataApps : AppCompatActivity() {
 
                         val data = response.body()?.data
 
-                        showData(data)
+                        //showData(data)
 
                     }
                 }
