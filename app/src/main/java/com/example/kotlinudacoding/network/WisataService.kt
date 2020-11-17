@@ -4,10 +4,10 @@ import com.example.kotlinudacoding.model.ResponseServer
 import retrofit2.Call
 import retrofit2.http.GET
 
-interface BatikService {
+interface WisataService {
 
-    @GET("api/all")
-    fun getDataBatik(): Call<ResponseServer>
+    @GET("api?action=findAll")
+    fun getDataWisata(): Call<ResponseServer>
 
 
 }

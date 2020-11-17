@@ -8,7 +8,7 @@ class ConfigNetwork {
     companion object {
         fun getRetrofit(): BatikService {
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://udacoding.com/")
+                .baseUrl("http://batikita.herokuapp.com/index.php/batik/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 

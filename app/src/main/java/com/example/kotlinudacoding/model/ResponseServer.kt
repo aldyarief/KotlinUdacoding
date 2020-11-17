@@ -4,6 +4,8 @@ class ResponseServer {
     var status_code : Int? = null
     var message : String? = null
 
-    var data : ArrayList<Batik>? = null
+    var data : ArrayList<HasilItem>? = null
+
+
 
 }
