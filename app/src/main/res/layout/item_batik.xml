@@ -5,25 +5,30 @@
     android:layout_height="320dp">
 
     <ImageView
+        android:id="@+id/itemImg"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:scaleType="fitXY"
-        android:src="@mipmap/ic_launcher"
-        android:id="@+id/gambar">
-    </ImageView>
+        android:src="@mipmap/ic_launcher"/>
+
     <TextView
+        android:id="@+id/itemNamaLokasi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/namabatik"
-        android:layout_below="@id/gambar"
-        android:text="nama batik">
-    </TextView>
+        android:text="nama lokasi"
+        android:padding="10dp"
+        android:textColor="@android:color/white"
+        android:layout_alignParentBottom="true"/>
+
     <TextView
+        android:id="@+id/itemNamaTempat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="daerah batik"
-        android:id="@+id/daerahbatik"
-        android:layout_below="@id/namabatik">
-    </TextView>
+        android:text="nama lokasi"
+        android:padding="10dp"
+        android:textSize="19sp"
+        android:layout_above="@+id/itemNamaLokasi"
+        android:textColor="@android:color/white"
+        />
 
 </RelativeLayout>

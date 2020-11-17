@@ -17,29 +17,29 @@ import retrofit2.Response
 
 
 class BatikApps : AppCompatActivity() {
-    private var recyclerView: RecyclerView? = null
-    private var adapter: BatikAdapter? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_batikapps)
 
-        recyclerView = findViewById<View>(R.id.listbatik) as RecyclerView
-
-        adapter = BatikAdapter(ArrayList<Batik>())
-
-        val layoutManager: RecyclerView.LayoutManager = LinearLayoutManager(this@BatikApps)
-
-        recyclerView!!.setLayoutManager(layoutManager)
-
-        recyclerView!!.setAdapter(adapter)
 
         ConfigNetwork.getRetrofit().getDataBatik().enqueue(object : Callback<ResponseServer> {
             override fun onResponse(
                 call: Call<ResponseServer>,
                 response: Response<ResponseServer>
             ) {
-                val data = response.body()?.data
-                showdata(data!!)
+                Log.d("response server", response.message())
+
+                if (response.isSuccessful){
+                    val status = response.body()?.status_code
+
+                    if (status == 200) {
+
+                        val data = response.body()?.data
+
+                        showData(data)
+
+                    }
+                }
             }
 
             override fun onFailure(call: Call<ResponseServer>, t: Throwable) {
@@ -48,8 +48,7 @@ class BatikApps : AppCompatActivity() {
         })
     }
 
-    private fun showdata(data: ArrayList<Batik>) {
+    private fun showData(data: ArrayList<Batik>?) {
         listbatik.adapter = BatikAdapter(data)
     }
-
 }
