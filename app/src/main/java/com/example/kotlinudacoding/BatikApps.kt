@@ -5,7 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kotlinudacoding.adapter.BatikAdapter
 import com.example.kotlinudacoding.model.Batik
-import com.example.kotlinudacoding.model.ResponseServer
+import com.example.kotlinudacoding.model.HasilItem
 import com.example.kotlinudacoding.network.ConfigNetwork
 import kotlinx.android.synthetic.main.activity_batikapps.*
 import retrofit2.Call
@@ -24,13 +24,12 @@ class BatikApps : AppCompatActivity() {
             override fun onResponse(call: Call<Batik>, response: Response<Batik>) {
                 Log.d("response server", response.message())
 
-                //if (response.isSuccessful){
+                if (response.isSuccessful){
 
-                 //   val hasil = response.body()?.hasil
+                    val hasil = response.body()?.hasil
 
-                    //showData(hasil)
-
-               // }
+                    showData(hasil)
+                }
             }
 
             override fun onFailure(call: Call<Batik>, t: Throwable) {
@@ -39,7 +38,7 @@ class BatikApps : AppCompatActivity() {
         })
     }
 
-    private fun showData(hasil: ArrayList<Batik>?) {
+    private fun showData(hasil: List<HasilItem?>?) {
         listbatik.adapter = BatikAdapter(hasil)
     }
 

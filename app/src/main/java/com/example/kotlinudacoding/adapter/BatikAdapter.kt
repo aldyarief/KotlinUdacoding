@@ -6,10 +6,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.kotlinudacoding.R
-import com.example.kotlinudacoding.model.Batik
+import com.example.kotlinudacoding.model.HasilItem
 import kotlinx.android.synthetic.main.item_batik.view.*
 
-class BatikAdapter(var hasil: ArrayList<Batik>?) : RecyclerView.Adapter<BatikAdapter.BatikHolder>() {
+class BatikAdapter(var hasil: List<HasilItem?>?) : RecyclerView.Adapter<BatikAdapter.BatikHolder>() {
     class BatikHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val img = itemView.itemImg
         val textName = itemView.itemNamaLokasi
@@ -23,9 +23,9 @@ class BatikAdapter(var hasil: ArrayList<Batik>?) : RecyclerView.Adapter<BatikAda
     }
 
     override fun onBindViewHolder(holder: BatikHolder, position: Int) {
-       holder.itemNamaTempat.text = hasil?.get(position)?.hasil.toString()
-       //holder.textName.text = hasil?.get(position)?.namaBatik
-        //Glide.with(holder.itemView.context).load(data?.get(position)?.linkBatik).into(holder.img)
+       holder.itemNamaTempat.text = hasil?.get(position)?.namaBatik
+       holder.textName.text = hasil?.get(position)?.daerahBatik
+        Glide.with(holder.itemView.context).load(hasil?.get(position)?.linkBatik).into(holder.img)
     }
 
     override fun getItemCount(): Int {
