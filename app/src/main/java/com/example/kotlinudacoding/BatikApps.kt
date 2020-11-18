@@ -4,7 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kotlinudacoding.adapter.BatikAdapter
-import com.example.kotlinudacoding.model.HasilItem
+import com.example.kotlinudacoding.model.Batik
 import com.example.kotlinudacoding.model.ResponseServer
 import com.example.kotlinudacoding.network.ConfigNetwork
 import kotlinx.android.synthetic.main.activity_batikapps.*
@@ -19,34 +19,28 @@ class BatikApps : AppCompatActivity() {
         setContentView(R.layout.activity_batikapps)
 
 
-        ConfigNetwork.getRetrofit().getDataBatik().enqueue(object : Callback<ResponseServer> {
-            override fun onResponse(
-                call: Call<ResponseServer>,
-                response: Response<ResponseServer>
-            ) {
+        ConfigNetwork.getRetrofit().getDataBatik().enqueue(object : Callback<Batik> {
+
+            override fun onResponse(call: Call<Batik>, response: Response<Batik>) {
                 Log.d("response server", response.message())
 
-                if (response.isSuccessful){
-                    val status = response.body()?.status_code
+                //if (response.isSuccessful){
 
-                    if (status == 200) {
+                 //   val hasil = response.body()?.hasil
 
-                        val data2 = response.body()?.data
+                    //showData(hasil)
 
-                        showData(data2)
-
-                    }
-                }
+               // }
             }
 
-            override fun onFailure(call: Call<ResponseServer>, t: Throwable) {
+            override fun onFailure(call: Call<Batik>, t: Throwable) {
                 Log.d("response server", t.message!!)
             }
         })
     }
 
-    private fun showData(data: ArrayList<HasilItem>?) {
-        listbatik.adapter = BatikAdapter(data)
+    private fun showData(hasil: ArrayList<Batik>?) {
+        listbatik.adapter = BatikAdapter(hasil)
     }
 
 

@@ -6,13 +6,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ConfigNetwork {
 
     companion object {
-        fun getRetrofit(): BatikService {
+        fun getRetrofit(): Service {
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://batikita.herokuapp.com/index.php/batik/")
+                .baseUrl("http://batikita.herokuapp.com/index.php/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
 
-            val service = retrofit.create(BatikService::class.java)
+            val service = retrofit.create(Service::class.java)
 
             return service
         }

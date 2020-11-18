@@ -19,7 +19,7 @@ class WisataApps : AppCompatActivity() {
         setContentView(R.layout.activity_wisataapps)
 
 
-        ConfigNetwork.getRetrofit().getDataBatik().enqueue(object : Callback<ResponseServer> {
+        ConfigNetwork.getRetrofit().getDataWisata().enqueue(object : Callback<ResponseServer> {
             override fun onResponse(
                 call: Call<ResponseServer>,
                 response: Response<ResponseServer>
@@ -33,7 +33,7 @@ class WisataApps : AppCompatActivity() {
 
                         val data = response.body()?.data
 
-                        //showData(data)
+                        showData(data)
 
                     }
                 }
