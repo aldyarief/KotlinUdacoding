@@ -4,9 +4,11 @@ import android.app.Dialog
 import android.os.Bundle
 import android.util.Log
 import android.view.Window
+import android.view.WindowManager
 import android.widget.Button
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.example.kotlinudacoding.adapter.BatikAdapter
 import com.example.kotlinudacoding.model.Batik
 import com.example.kotlinudacoding.model.HasilItem
@@ -48,6 +50,7 @@ class BatikApps : AppCompatActivity() {
             override fun detailData(item: HasilItem?) {
                 Dialog (this@BatikApps).apply {
                     requestWindowFeature(Window.FEATURE_NO_TITLE)
+                    getWindow()?.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
                     setCancelable(true)
                     setContentView(R.layout.detail_batik)
 
