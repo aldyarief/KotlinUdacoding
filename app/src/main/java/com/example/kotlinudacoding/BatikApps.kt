@@ -14,12 +14,13 @@ import retrofit2.Response
 
 
 class BatikApps : AppCompatActivity() {
+    var server : String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_batikapps)
+        server = "http://batikita.herokuapp.com/index.php/"
 
-
-        ConfigNetwork.getRetrofit().getDataBatik().enqueue(object : Callback<Batik> {
+        ConfigNetwork.getRetrofit(server!!).getDataBatik().enqueue(object : Callback<Batik> {
 
             override fun onResponse(call: Call<Batik>, response: Response<Batik>) {
                 Log.d("response server", response.message())

@@ -9,13 +9,13 @@ import retrofit2.converter.gson.GsonConverterFactory
 class ConfigNetwork {
 
     companion object {
-        fun getRetrofit(): Service {
+        fun getRetrofit(SERVER_URL : String): Service {
 
             val interceptor = HttpLoggingInterceptor()
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
             val client = OkHttpClient.Builder().addInterceptor(interceptor).build()
             val retrofit = Retrofit.Builder()
-                .baseUrl("http://batikita.herokuapp.com/index.php/")
+                .baseUrl(SERVER_URL)
                 .client(client)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()

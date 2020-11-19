@@ -14,12 +14,13 @@ import retrofit2.Response
 
 
 class WisataApps : AppCompatActivity() {
+    var server : String? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wisataapps)
+        server = "http://udacoding.com/"
 
-
-        ConfigNetwork.getRetrofit().getDataWisata().enqueue(object : Callback<ResponseServer> {
+        ConfigNetwork.getRetrofit(server!!).getDataWisata().enqueue(object : Callback<ResponseServer> {
             override fun onResponse(
                 call: Call<ResponseServer>,
                 response: Response<ResponseServer>
@@ -32,9 +33,7 @@ class WisataApps : AppCompatActivity() {
                     if (status == 200) {
 
                         val data = response.body()?.data
-
                         showData(data)
-
                     }
                 }
             }
