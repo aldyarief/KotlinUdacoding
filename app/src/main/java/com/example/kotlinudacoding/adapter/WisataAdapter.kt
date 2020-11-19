@@ -13,8 +13,8 @@ class WisataAdapter(var data: ArrayList<Wisata>?) : RecyclerView.Adapter<WisataA
     class WisataHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         val img = itemView.itemImg
-        val textName = itemView.itemNamaLokasi
-        val itemNamaTempat = itemView.itemNamaTempat
+        val textName = itemView.itemMakna
+        val itemNamaTempat = itemView.itemNama
 
 
     }

@@ -1,7 +1,11 @@
 package com.example.kotlinudacoding
 
+import android.app.Dialog
 import android.os.Bundle
 import android.util.Log
+import android.view.Window
+import android.widget.Button
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.kotlinudacoding.adapter.BatikAdapter
 import com.example.kotlinudacoding.model.Batik
@@ -40,7 +44,26 @@ class BatikApps : AppCompatActivity() {
     }
 
     private fun showData(hasil: List<HasilItem?>?) {
-        listbatik.adapter = BatikAdapter(hasil)
+        listbatik.adapter = BatikAdapter(hasil, object: BatikAdapter.onClickListener{
+            override fun detailData(item: HasilItem?) {
+                Dialog (this@BatikApps).apply {
+                    requestWindowFeature(Window.FEATURE_NO_TITLE)
+                    setCancelable(true)
+                    setContentView(R.layout.detail_batik)
+
+                    val nama = this.findViewById<TextView>(R.id.detailNama)
+                    val deskripsi = this.findViewById<TextView>(R.id.deskripsi)
+                    val close = this.findViewById<Button>(R.id.Close)
+
+                    nama.text = "Nama : ${item?.namaBatik}"
+                    deskripsi.text = "Alamat : ${item?.maknaBatik}"
+
+                    close.setOnClickListener {
+                        this.dismiss()
+                    }
+                }.show()
+            }
+        })
     }
 
 
