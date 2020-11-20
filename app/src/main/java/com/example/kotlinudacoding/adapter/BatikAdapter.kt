@@ -18,7 +18,7 @@ class BatikAdapter(var hasil: List<HasilItem?>?,
 
     inner class BatikHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val img = itemView.itemImg
-        val itemMakna = itemView.itemMakna
+        val itemDaerah = itemView.itemMakna
         val itemNama = itemView.itemNama
     }
 
@@ -30,7 +30,7 @@ class BatikAdapter(var hasil: List<HasilItem?>?,
 
     override fun onBindViewHolder(holder: BatikHolder, position: Int) {
        holder.itemNama.text = hasil?.get(position)?.namaBatik
-       holder.itemMakna.text = hasil?.get(position)?.maknaBatik
+       holder.itemDaerah.text = hasil?.get(position)?.maknaBatik
         Glide.with(holder.itemView.context).load(hasil?.get(position)?.linkBatik).into(holder.img)
 
         val item = hasil?.get(position)

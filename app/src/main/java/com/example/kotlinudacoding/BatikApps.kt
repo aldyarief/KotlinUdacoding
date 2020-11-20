@@ -1,6 +1,7 @@
 package com.example.kotlinudacoding
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Window
@@ -68,6 +69,10 @@ class BatikApps : AppCompatActivity() {
             }
         })
     }
-
+    override fun onBackPressed() {
+        val intent = Intent(this@BatikApps,Dashboard ::class.java)
+        finish()
+        startActivity(intent)
+    }
 
 }
