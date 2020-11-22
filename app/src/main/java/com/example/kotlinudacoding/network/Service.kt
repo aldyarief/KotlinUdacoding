@@ -1,6 +1,7 @@
 package com.example.kotlinudacoding.network
 
 import com.example.kotlinudacoding.model.Batik
+import com.example.kotlinudacoding.model.Daerah
 import com.example.kotlinudacoding.model.ResponseServer
 import retrofit2.Call
 import retrofit2.http.GET
@@ -14,6 +15,6 @@ interface Service {
     fun getDataWisata(): Call<ResponseServer>
 
     @GET("api/daerahindonesia/provinsi")
-    fun getDataDaerah(): Call<ResponseServer>
+    fun getDataDaerah(): Call<Daerah>
 
 }

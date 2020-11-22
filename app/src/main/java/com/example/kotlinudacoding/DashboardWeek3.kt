@@ -27,5 +27,15 @@ class DashboardWeek3 : AppCompatActivity() {
             finish()
             startActivity(intent)
         }
+
+
+        daerah!!.setOnClickListener {
+            val intent = Intent(this@DashboardWeek3, DaerahApps::class.java)
+            finish()
+            startActivity(intent)
+        }
+
+
+
     }
 }
