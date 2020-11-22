@@ -13,4 +13,7 @@ interface Service {
     @GET("api?action=findAll")
     fun getDataWisata(): Call<ResponseServer>
 
+    @GET("api/daerahindonesia/provinsi")
+    fun getDataDaerah(): Call<ResponseServer>
+
 }
