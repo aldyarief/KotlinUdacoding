@@ -1,18 +1,17 @@
 package com.example.kotlinudacoding.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.kotlinudacoding.R
+import com.example.kotlinudacoding.detail.BatikDetail
 import com.example.kotlinudacoding.model.HasilItem
 import kotlinx.android.synthetic.main.item_batik.view.*
 
-class BatikAdapter(var hasil: List<HasilItem?>?,
-                   private val itemClick : onClickListener
+class BatikAdapter(var hasil: List<HasilItem?>?
 ) : RecyclerView.Adapter<BatikAdapter.BatikHolder>() {
 
 
@@ -33,12 +32,16 @@ class BatikAdapter(var hasil: List<HasilItem?>?,
        holder.itemDaerah.text = hasil?.get(position)?.maknaBatik
         Glide.with(holder.itemView.context).load(hasil?.get(position)?.linkBatik).into(holder.img)
 
-        val item = hasil?.get(position)
 
         holder.itemView.setOnClickListener {
-            itemClick.detailData(item)
+            val intent = Intent(holder.itemView.context, BatikDetail::class.java)
+            intent.putExtra("nama", hasil?.get(position)?.namaBatik)
+            intent.putExtra("desc", hasil?.get(position)?.maknaBatik)
+            intent.putExtra("img", hasil?.get(position)?.linkBatik)
+            intent.putExtra("hargamin", hasil?.get(position)?.hargaRendah)
+            intent.putExtra("hargamax", hasil?.get(position)?.hargaTinggi)
+            holder.itemView.context.startActivity(intent)
         }
-
     }
 
     override fun getItemCount(): Int {
@@ -46,7 +49,4 @@ class BatikAdapter(var hasil: List<HasilItem?>?,
 
     }
 
-    interface onClickListener {
-        fun detailData(item: HasilItem?)
-    }
 }

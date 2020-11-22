@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.kotlinudacoding">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_udacoding"
@@ -11,8 +13,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".BatikApps"></activity>
-        <activity android:name=".WisataApps"></activity>
+        <activity android:name=".detail.BatikDetail"></activity>
+        <activity
+            android:name=".detail.DetailBatik"
+            android:label="@string/title_activity_detail_batik"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".DashboardWeek3" />
+        <activity android:name=".BatikApps" />
+        <activity android:name=".WisataApps" />
         <activity android:name=".Dashboard" />
         <activity android:name=".MainMenu">
             <intent-filter>
