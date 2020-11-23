@@ -1,5 +1,6 @@
 package com.example.kotlinudacoding
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -46,5 +47,9 @@ class CovidApps : AppCompatActivity() {
         listcovid.adapter = CovidAdapter(hasil)
     }
 
-
+    override fun onBackPressed() {
+        val intent = Intent(this@CovidApps,DashboardWeek3 ::class.java)
+        finish()
+        startActivity(intent)
+    }
 }

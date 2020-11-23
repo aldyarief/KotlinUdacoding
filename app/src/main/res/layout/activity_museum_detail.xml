@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:gravity="center_vertical"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".detail.CovidDetail">
+    tools:context=".detail.MuseumDetail">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,10 +17,10 @@
             android:layout_height="200dp"
             android:scaleType="fitXY"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/covid"/>
+            android:src="@drawable/museum"/>
 
         <TextView
-            android:id="@+id/detailCovid"
+            android:id="@+id/detailMuseum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="nama lokasi"
@@ -40,7 +40,7 @@
             android:layout_marginBottom="10dp"/>
 
         <TextView
-            android:id="@+id/detailKasus"
+            android:id="@+id/detailLetak"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="nama lokasi"
@@ -50,7 +50,7 @@
 
 
         <TextView
-            android:id="@+id/detailSembuh"
+            android:id="@+id/detailAlamat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Deskripsi"
@@ -58,14 +58,14 @@
             android:layout_marginBottom="5dp"/>
 
         <TextView
-            android:id="@+id/detailRawat"
+            android:id="@+id/detailBerdiri"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="nama lokasi"
             android:layout_below="@id/detailSembuh"/>
 
         <TextView
-            android:id="@+id/detailMeninggal"
+            android:id="@+id/detailPengelola"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="nama lokasi"

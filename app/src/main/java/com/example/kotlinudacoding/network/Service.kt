@@ -1,11 +1,9 @@
 package com.example.kotlinudacoding.network
 
-import com.example.kotlinudacoding.model.Batik
-import com.example.kotlinudacoding.model.Covid
-import com.example.kotlinudacoding.model.Daerah
-import com.example.kotlinudacoding.model.ResponseServer
+import com.example.kotlinudacoding.model.*
 import retrofit2.Call
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface Service {
 
@@ -20,5 +18,11 @@ interface Service {
 
     @GET("api/prov.json")
     fun getDataCovid(): Call<Covid>
+
+    @GET("api/index.php/CcariMuseum/searchGET?nama=museum")
+    fun getDataMuseum(): Call<Museum>
+
+    @GET("api/index.php/CcariMuseum/searchGET?nama=")
+    fun getCariMuseum(@Query("nama") nama : String): Call<Museum>
 
 }

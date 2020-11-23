@@ -51,7 +51,7 @@ class BatikApps : AppCompatActivity() {
         listbatik.adapter = BatikAdapter(hasil)
     }
     override fun onBackPressed() {
-        val intent = Intent(this@BatikApps,Dashboard ::class.java)
+        val intent = Intent(this@BatikApps,DashboardWeek3 ::class.java)
         finish()
         startActivity(intent)
     }

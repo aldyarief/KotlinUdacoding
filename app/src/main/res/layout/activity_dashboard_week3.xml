@@ -64,7 +64,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/ic_calculator"
+                    android:src="@mipmap/ic_batik"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -97,7 +97,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/ic_umur"
+                    android:src="@drawable/ic_museum"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -141,7 +141,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/ic_login"
+                    android:src="@drawable/ic_daerah"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -174,7 +174,7 @@
                 <ImageView
                     android:layout_width="100dp"
                     android:layout_height="100dp"
-                    android:src="@drawable/ic_umur"
+                    android:src="@drawable/ic_virus"
                     android:padding="10dp"/>
                 <TextView
                     android:layout_width="wrap_content"

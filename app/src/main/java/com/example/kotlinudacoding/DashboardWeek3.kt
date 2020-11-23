@@ -40,7 +40,11 @@ class DashboardWeek3 : AppCompatActivity() {
             finish()
             startActivity(intent)
         }
-
+        museum!!.setOnClickListener {
+            val intent = Intent(this@DashboardWeek3, MuseumApps::class.java)
+            finish()
+            startActivity(intent)
+        }
 
 
     }

@@ -1,5 +1,6 @@
 package com.example.kotlinudacoding
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -43,5 +44,11 @@ class DaerahApps : AppCompatActivity() {
     private fun showData(provinsi: List<ProvinsiItem?>?) {
         listdaerah.adapter = DaerahAdapter(provinsi)
 
+    }
+
+    override fun onBackPressed() {
+        val intent = Intent(this@DaerahApps,DashboardWeek3 ::class.java)
+        finish()
+        startActivity(intent)
     }
 }
