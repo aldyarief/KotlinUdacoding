@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DaerahApps"
+    tools:context=".CovidApps"
     android:orientation="vertical">
 
     <LinearLayout
@@ -19,7 +19,7 @@
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:gravity="left"
-            android:text="Provinsi di Indonesia"
+            android:text="Data Covid per Provinsi"
             android:textSize="20sp"
             android:textColor="#0347F4"
             android:layout_marginRight="5dp"/>
@@ -33,7 +33,7 @@
     </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listdaerah"
+        android:id="@+id/listcovid"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>

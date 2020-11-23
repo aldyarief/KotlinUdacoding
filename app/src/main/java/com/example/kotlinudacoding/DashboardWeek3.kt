@@ -35,6 +35,12 @@ class DashboardWeek3 : AppCompatActivity() {
             startActivity(intent)
         }
 
+        covid!!.setOnClickListener {
+            val intent = Intent(this@DashboardWeek3, CovidApps::class.java)
+            finish()
+            startActivity(intent)
+        }
+
 
 
     }

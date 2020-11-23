@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".DaerahApps"></activity>
+        <activity android:name=".detail.CovidDetail"></activity>
+        <activity android:name=".CovidApps" />
+        <activity android:name=".DaerahApps" />
         <activity android:name=".detail.BatikDetail" />
         <activity
             android:name=".detail.DetailBatik"
