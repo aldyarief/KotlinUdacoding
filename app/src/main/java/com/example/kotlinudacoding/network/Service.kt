@@ -2,8 +2,7 @@ package com.example.kotlinudacoding.network
 
 import com.example.kotlinudacoding.model.*
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface Service {
 
@@ -24,5 +23,15 @@ interface Service {
 
     @GET("api/index.php/CcariMuseum/searchGET?nama=")
     fun getCariMuseum(@Query("nama") nama : String): Call<Museum>
+
+    @GET("udacoding/pengunjung.php?")
+    fun getDataPengunjung(@Query("action") action : String): Call<Pengunjung>
+
+    @FormUrlEncoded
+    @POST("udacoding/pengunjung.php?")
+    fun getInsertPengunjung(@Field("action") action : String,
+                            @Field("nama") nama : String,
+                            @Field("alamat") alamat : String,
+                            @Field("telp") telp : String): Call<Pengunjung>
 
 }
