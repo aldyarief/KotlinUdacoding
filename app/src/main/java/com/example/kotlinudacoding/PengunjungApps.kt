@@ -5,9 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
-import android.widget.Adapter
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import com.example.kotlinudacoding.adapter.OnEditItemClikListener
 import com.example.kotlinudacoding.adapter.PengunjungAdapter
 import com.example.kotlinudacoding.model.HasildataItem
 import com.example.kotlinudacoding.model.Pengunjung
@@ -19,12 +20,13 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class PengunjungApps : AppCompatActivity() {
+class PengunjungApps : AppCompatActivity(), OnEditItemClikListener {
     var server : String? = null
     var action : String? = null
     var nama: EditText? = null
     var alamat: EditText? = null
     var telp: EditText? = null
+    var pengunjungid: TextView? = null
     var buttonsave: MaterialCardView?= null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,15 +36,21 @@ class PengunjungApps : AppCompatActivity() {
         nama = findViewById(R.id.nama) as EditText
         alamat = findViewById(R.id.alamat) as EditText
         telp = findViewById(R.id.telp) as EditText
+        pengunjungid = findViewById(R.id.idpen) as TextView
         buttonsave = findViewById<View>(R.id.btnSave) as MaterialCardView
 
+
         AmbilData()
+        action=""
 
         buttonsave!!.setOnClickListener {
             val namapen = nama!!.text.toString().trim { it <= ' ' }
             val alamatpen = alamat!!.text.toString().trim { it <= ' ' }
             val telppen = telp!!.text.toString().trim { it <= ' ' }
-            action = "insertdata"
+            if (action.equals("")) {
+                action = "insertdata"
+            }
+
 
             ConfigNetwork.getRetrofit(server!!).getInsertPengunjung(action!!,namapen,alamatpen,telppen).enqueue(object : Callback<Pengunjung> {
                 override fun onResponse(call: Call<Pengunjung>, response: Response<Pengunjung>) {
@@ -69,7 +77,7 @@ class PengunjungApps : AppCompatActivity() {
     }
 
     private fun showData(datapengunjung: List<HasildataItem?>?) {
-        listpengunjung.adapter = PengunjungAdapter(datapengunjung)
+        listpengunjung.adapter = PengunjungAdapter(datapengunjung,this)
     }
 
     fun AmbilData() {
@@ -98,6 +106,14 @@ class PengunjungApps : AppCompatActivity() {
         val intent = Intent(this@PengunjungApps,Dashboard ::class.java)
         finish()
         startActivity(intent)
+    }
+
+    override fun onItemClick(item: HasildataItem?, position: Int) {
+        nama?.setText(item?.nama)
+        alamat?.setText(item?.alamat)
+        telp?.setText(item?.telp)
+        pengunjungid?.setText(item?.idpengunjung)
+        action="editdata"
     }
 
 

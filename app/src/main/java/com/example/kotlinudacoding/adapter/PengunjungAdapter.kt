@@ -9,11 +9,24 @@ import com.example.kotlinudacoding.model.HasildataItem
 import kotlinx.android.synthetic.main.item_pengunjung.view.*
 
 
-class PengunjungAdapter(var data: List<HasildataItem?>?) : RecyclerView.Adapter<PengunjungAdapter.PengunjungHolder>() {
+class PengunjungAdapter(var data: List<HasildataItem?>?,
+                        private val itemClick : OnEditItemClikListener) : RecyclerView.Adapter<PengunjungAdapter.PengunjungHolder>() {
     class PengunjungHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val itemNama = itemView.itemNama
         val itemAlamat = itemView.itemAlamat
         val itemTelp = itemView.itemTelp
+        var menuedit = itemView.menuedit
+
+        fun initialize(item : HasildataItem?, action: OnEditItemClikListener) {
+            itemNama.text = item?.nama
+            itemAlamat.text = item?.alamat
+            itemTelp.text = item?.telp
+
+
+            menuedit.setOnClickListener{
+                action.onItemClick(item,adapterPosition)
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PengunjungHolder {
@@ -27,6 +40,9 @@ class PengunjungAdapter(var data: List<HasildataItem?>?) : RecyclerView.Adapter<
         holder.itemAlamat.text = data?.get(position)?.alamat
         holder.itemTelp.text = data?.get(position)?.telp
 
+
+        holder.initialize(data?.get(position),itemClick)
+
     }
 
     override fun getItemCount(): Int {
@@ -34,6 +50,10 @@ class PengunjungAdapter(var data: List<HasildataItem?>?) : RecyclerView.Adapter<
     }
 
 
+}
+
+interface OnEditItemClikListener {
+    fun onItemClick(item: HasildataItem?, position: Int)
 }
 
 
