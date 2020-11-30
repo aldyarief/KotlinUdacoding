@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Adapter
 import android.widget.EditText
 import android.widget.Toast
 import com.example.kotlinudacoding.adapter.PengunjungAdapter
@@ -12,6 +13,7 @@ import com.example.kotlinudacoding.model.HasildataItem
 import com.example.kotlinudacoding.model.Pengunjung
 import com.example.kotlinudacoding.network.ConfigNetwork
 import com.google.android.material.card.MaterialCardView
+import kotlinx.android.synthetic.main.item_pengunjung.view.*
 import kotlinx.android.synthetic.main.activity_pengunjung_apps.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -35,27 +37,33 @@ class PengunjungApps : AppCompatActivity() {
         buttonsave = findViewById<View>(R.id.btnSave) as MaterialCardView
 
         AmbilData()
+
         buttonsave!!.setOnClickListener {
             val namapen = nama!!.text.toString().trim { it <= ' ' }
             val alamatpen = alamat!!.text.toString().trim { it <= ' ' }
             val telppen = telp!!.text.toString().trim { it <= ' ' }
             action = "insertdata"
 
-           // ConfigNetwork.getRetrofit(server!!).getInsertPengunjung(action!!,namapen,alamatpen,telppen).enqueue(object : Callback<Pengunjung> {
-             //   override fun onResponse(call: Call<Pengunjung>, response: Response<Pengunjung>) {
-               //     Log.d("response server", response.message())
+            ConfigNetwork.getRetrofit(server!!).getInsertPengunjung(action!!,namapen,alamatpen,telppen).enqueue(object : Callback<Pengunjung> {
+                override fun onResponse(call: Call<Pengunjung>, response: Response<Pengunjung>) {
+                    Log.d("response server", response.message())
 
-                 //   if (response.isSuccessful){
-                   //     Toast.makeText(this@PengunjungApps, "Data berhasil disimpan!", Toast.LENGTH_SHORT).show()
-                     //   AmbilData()
-                    //}
-                //}
+                    if (response.isSuccessful){
+                        val hasilnya = response.body()?.pesan
+                        Toast.makeText(this@PengunjungApps, hasilnya, Toast.LENGTH_SHORT).show()
+                        AmbilData()
+                        nama!!.getText().clear()
+                        alamat!!.getText().clear()
+                        telp!!.getText().clear()
 
-                //override fun onFailure(call: Call<Pengunjung>, t: Throwable) {
-                 //   Log.d("response server", t.message!!)
-                //}
+                    }
+                }
 
-            //})
+                override fun onFailure(call: Call<Pengunjung>, t: Throwable) {
+                    Log.d("response server", t.message!!)
+                }
+
+            })
 
         }
     }
@@ -91,4 +99,6 @@ class PengunjungApps : AppCompatActivity() {
         finish()
         startActivity(intent)
     }
+
+
 }

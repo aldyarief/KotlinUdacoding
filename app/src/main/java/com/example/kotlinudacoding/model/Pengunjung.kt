@@ -4,6 +4,9 @@ import com.google.gson.annotations.SerializedName
 
 data class Pengunjung(
 
+	@field:SerializedName("pesan")
+	val pesan: String? = null,
+
 	@field:SerializedName("hasildata")
 	val hasildata: List<HasildataItem?>? = null
 )

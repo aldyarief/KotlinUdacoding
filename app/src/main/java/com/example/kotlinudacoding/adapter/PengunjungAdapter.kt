@@ -18,7 +18,7 @@ class PengunjungAdapter(var data: List<HasildataItem?>?) : RecyclerView.Adapter<
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PengunjungHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_pengunjung, parent,false)
-        val holder = PengunjungAdapter.PengunjungHolder(view)
+        val holder = PengunjungHolder(view)
         return holder
     }
 
@@ -26,9 +26,17 @@ class PengunjungAdapter(var data: List<HasildataItem?>?) : RecyclerView.Adapter<
         holder.itemNama.text = data?.get(position)?.nama
         holder.itemAlamat.text = data?.get(position)?.alamat
         holder.itemTelp.text = data?.get(position)?.telp
+
     }
 
     override fun getItemCount(): Int {
         return data?.size ?: 0
     }
+
+
 }
+
+
+
+
+
