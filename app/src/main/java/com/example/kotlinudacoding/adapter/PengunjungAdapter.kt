@@ -10,12 +10,14 @@ import kotlinx.android.synthetic.main.item_pengunjung.view.*
 
 
 class PengunjungAdapter(var data: List<HasildataItem?>?,
-                        private val itemClick : OnEditItemClikListener) : RecyclerView.Adapter<PengunjungAdapter.PengunjungHolder>() {
+                        private val itemClick : OnEditItemClikListener,
+                        private val deleteClick : OnDeleteItemClickListener) : RecyclerView.Adapter<PengunjungAdapter.PengunjungHolder>() {
     class PengunjungHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val itemNama = itemView.itemNama
         val itemAlamat = itemView.itemAlamat
         val itemTelp = itemView.itemTelp
-        var menuedit = itemView.menuedit
+        val menuedit = itemView.menuedit
+        val menudelete = itemView.menudelete
 
         fun initialize(item : HasildataItem?, action: OnEditItemClikListener) {
             itemNama.text = item?.nama
@@ -25,6 +27,12 @@ class PengunjungAdapter(var data: List<HasildataItem?>?,
 
             menuedit.setOnClickListener{
                 action.onItemClick(item,adapterPosition)
+            }
+        }
+
+        fun initialize(item: HasildataItem?, action: OnDeleteItemClickListener) {
+            menudelete.setOnClickListener{
+                action.onDelete(item,adapterPosition)
             }
         }
     }
@@ -39,9 +47,8 @@ class PengunjungAdapter(var data: List<HasildataItem?>?,
         holder.itemNama.text = data?.get(position)?.nama
         holder.itemAlamat.text = data?.get(position)?.alamat
         holder.itemTelp.text = data?.get(position)?.telp
-
-
         holder.initialize(data?.get(position),itemClick)
+        holder.initialize(data?.get(position),deleteClick)
 
     }
 
@@ -50,6 +57,10 @@ class PengunjungAdapter(var data: List<HasildataItem?>?,
     }
 
 
+}
+
+interface OnDeleteItemClickListener {
+    fun onDelete(item: HasildataItem?, position: Int)
 }
 
 interface OnEditItemClikListener {

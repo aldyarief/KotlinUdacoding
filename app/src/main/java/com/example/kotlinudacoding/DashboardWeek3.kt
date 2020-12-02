@@ -24,26 +24,26 @@ class DashboardWeek3 : AppCompatActivity() {
 
         batik!!.setOnClickListener {
             val intent = Intent(this@DashboardWeek3, BatikApps::class.java)
-            finish()
             startActivity(intent)
+            finish()
         }
 
 
         daerah!!.setOnClickListener {
             val intent = Intent(this@DashboardWeek3, DaerahApps::class.java)
-            finish()
             startActivity(intent)
+            finish()
         }
 
         covid!!.setOnClickListener {
             val intent = Intent(this@DashboardWeek3, CovidApps::class.java)
-            finish()
             startActivity(intent)
+            finish()
         }
         museum!!.setOnClickListener {
             val intent = Intent(this@DashboardWeek3, MuseumApps::class.java)
-            finish()
             startActivity(intent)
+            finish()
         }
 
 

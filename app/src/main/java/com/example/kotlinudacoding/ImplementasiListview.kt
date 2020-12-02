@@ -51,7 +51,7 @@ class ImplementasiListview : AppCompatActivity() {
 
     override fun onBackPressed() {
         val intent = Intent(this@ImplementasiListview,DashboardWeek2 ::class.java)
-        finish()
         startActivity(intent)
+        finish()
     }
 }

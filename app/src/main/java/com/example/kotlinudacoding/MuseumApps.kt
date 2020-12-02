@@ -77,8 +77,8 @@ class MuseumApps : AppCompatActivity() {
 
     override fun onBackPressed() {
         val intent = Intent(this@MuseumApps, DashboardWeek3::class.java)
-        finish()
         startActivity(intent)
+        finish()
     }
 
 

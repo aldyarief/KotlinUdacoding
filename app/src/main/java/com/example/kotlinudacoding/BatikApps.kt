@@ -52,8 +52,8 @@ class BatikApps : AppCompatActivity() {
     }
     override fun onBackPressed() {
         val intent = Intent(this@BatikApps,DashboardWeek3 ::class.java)
-        finish()
         startActivity(intent)
+        finish()
     }
 
 }

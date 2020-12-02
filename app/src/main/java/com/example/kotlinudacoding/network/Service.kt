@@ -35,14 +35,15 @@ interface Service {
 
     @GET("udacoding/pengunjung.php?")
     fun getEditPengunjung(@Query("action") action : String,
-                            @Query("nama") nama : String,
-                            @Query("alamat") alamat : String,
-                            @Query("telp") telp : String): Call<Pengunjung>
-
-    @GET("udacoding/pengunjung.php?")
-    fun getDeletePengunjung(@Query("action") action : String,
+                          @Query("id") id : String,
                           @Query("nama") nama : String,
                           @Query("alamat") alamat : String,
                           @Query("telp") telp : String): Call<Pengunjung>
+
+    @GET("udacoding/pengunjung.php?")
+    fun getDeletePengunjung(@Query("action") action : String,
+                            @Query("nama") nama : String,
+                            @Query("alamat") alamat : String,
+                            @Query("telp") telp : String): Call<Pengunjung>
 
 }

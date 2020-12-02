@@ -21,20 +21,20 @@ class Dashboard : AppCompatActivity() {
 
         week2!!.setOnClickListener {
             val intent = Intent(this@Dashboard, DashboardWeek2::class.java)
-            finish()
             startActivity(intent)
+            finish()
         }
 
         week3!!.setOnClickListener {
             val intent = Intent(this@Dashboard, DashboardWeek3::class.java)
-            finish()
             startActivity(intent)
+            finish()
         }
 
         week4!!.setOnClickListener {
             val intent = Intent(this@Dashboard, PengunjungApps::class.java)
-            finish()
             startActivity(intent)
+            finish()
         }
     }
 

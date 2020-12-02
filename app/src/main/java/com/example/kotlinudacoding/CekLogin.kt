@@ -43,7 +43,7 @@ class CekLogin : AppCompatActivity() {
 
     override fun onBackPressed() {
         val intent = Intent(this@CekLogin,DashboardWeek2 ::class.java)
-        finish()
         startActivity(intent)
+        finish()
     }
 }

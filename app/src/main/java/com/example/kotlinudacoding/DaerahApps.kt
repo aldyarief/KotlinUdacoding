@@ -48,7 +48,7 @@ class DaerahApps : AppCompatActivity() {
 
     override fun onBackPressed() {
         val intent = Intent(this@DaerahApps,DashboardWeek3 ::class.java)
-        finish()
         startActivity(intent)
+        finish()
     }
 }

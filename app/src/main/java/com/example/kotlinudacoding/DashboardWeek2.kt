@@ -25,32 +25,32 @@ class DashboardWeek2 : AppCompatActivity() {
 
         kalkulator!!.setOnClickListener {
             val intent = Intent(this@DashboardWeek2, Kalkulator::class.java)
-            finish()
             startActivity(intent)
+            finish()
         }
 
         umur!!.setOnClickListener {
             val intent = Intent(this@DashboardWeek2, HitungUmur::class.java)
-            finish()
             startActivity(intent)
+            finish()
         }
 
         login!!.setOnClickListener {
             val intent = Intent(this@DashboardWeek2, CekLogin::class.java)
-            finish()
             startActivity(intent)
+            finish()
         }
 
         listview!!.setOnClickListener {
             val intent = Intent(this@DashboardWeek2, ImplementasiListview::class.java)
-            finish()
             startActivity(intent)
+            finish()
         }
 
         recycler!!.setOnClickListener {
             val intent = Intent(this@DashboardWeek2, Recyclerview::class.java)
-            finish()
             startActivity(intent)
+            finish()
         }
 
     }
