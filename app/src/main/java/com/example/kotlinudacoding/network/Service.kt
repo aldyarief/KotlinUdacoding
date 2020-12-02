@@ -27,23 +27,24 @@ interface Service {
     @GET("udacoding/pengunjung.php?")
     fun getDataPengunjung(@Query("action") action : String): Call<Pengunjung>
 
-    @GET("udacoding/pengunjung.php?")
-    fun getInsertPengunjung(@Query("action") action : String,
-                            @Query("nama") nama : String,
-                            @Query("alamat") alamat : String,
-                            @Query("telp") telp : String): Call<Pengunjung>
+    @FormUrlEncoded
+    @POST("udacoding/insertpengunjung.php?")
+    fun getInsertPengunjung(@Field("action") action : String,
+                            @Field("nama") nama : String,
+                            @Field("alamat") alamat : String,
+                            @Field("telp") telp : String): Call<Pengunjung>
 
-    @GET("udacoding/pengunjung.php?")
-    fun getEditPengunjung(@Query("action") action : String,
-                          @Query("id") id : String,
-                          @Query("nama") nama : String,
-                          @Query("alamat") alamat : String,
-                          @Query("telp") telp : String): Call<Pengunjung>
+    @POST("udacoding/pengunjung.php?")
+    fun getEditPengunjung(@Field("action") action : String,
+                          @Field("id") id : String,
+                          @Field("nama") nama : String,
+                          @Field("alamat") alamat : String,
+                          @Field("telp") telp : String): Call<Pengunjung>
 
-    @GET("udacoding/pengunjung.php?")
-    fun getDeletePengunjung(@Query("action") action : String,
-                            @Query("nama") nama : String,
-                            @Query("alamat") alamat : String,
-                            @Query("telp") telp : String): Call<Pengunjung>
+    @POST("udacoding/pengunjung.php?")
+    fun getDeletePengunjung(@Field("action") action : String,
+                            @Field("nama") nama : String,
+                            @Field("alamat") alamat : String,
+                            @Field("telp") telp : String): Call<Pengunjung>
 
 }
