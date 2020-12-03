@@ -24,25 +24,29 @@ interface Service {
     @GET("api/index.php/CcariMuseum/searchGET?nama=")
     fun getCariMuseum(@Query("nama") nama : String): Call<Museum>
 
-    @GET("udacoding/pengunjung.php?")
+    @GET("udacoding/showpengunjung.php?")
     fun getDataPengunjung(@Query("action") action : String): Call<Pengunjung>
 
     @FormUrlEncoded
-    @POST("udacoding/insertpengunjung.php?")
+    @POST("udacoding/pengunjung.php?")
     fun getInsertPengunjung(@Field("action") action : String,
+                            @Field("id") id : String,
                             @Field("nama") nama : String,
                             @Field("alamat") alamat : String,
                             @Field("telp") telp : String): Call<Pengunjung>
 
+    @FormUrlEncoded
     @POST("udacoding/pengunjung.php?")
     fun getEditPengunjung(@Field("action") action : String,
-                          @Field("id") id : String,
+                          @Field("kunjungid") kunjungid : String,
                           @Field("nama") nama : String,
                           @Field("alamat") alamat : String,
                           @Field("telp") telp : String): Call<Pengunjung>
 
+    @FormUrlEncoded
     @POST("udacoding/pengunjung.php?")
     fun getDeletePengunjung(@Field("action") action : String,
+                            @Field("kunjungid") kunjungid : String,
                             @Field("nama") nama : String,
                             @Field("alamat") alamat : String,
                             @Field("telp") telp : String): Call<Pengunjung>

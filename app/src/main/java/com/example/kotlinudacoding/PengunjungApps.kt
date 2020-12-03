@@ -1,5 +1,6 @@
 package com.example.kotlinudacoding
 
+import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import android.view.View
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.example.kotlinudacoding.adapter.OnDeleteItemClickListener
 import com.example.kotlinudacoding.adapter.OnEditItemClikListener
 import com.example.kotlinudacoding.adapter.PengunjungAdapter
@@ -56,7 +58,7 @@ class PengunjungApps : AppCompatActivity(), OnEditItemClikListener, OnDeleteItem
 
             if (action.equals("insertdata")) {
 
-                ConfigNetwork.getRetrofit(server!!).getInsertPengunjung(action!!, namapen, alamatpen, telppen).enqueue(object : Callback<Pengunjung> {
+                ConfigNetwork.getRetrofit(server!!).getInsertPengunjung(action!!,kunjungid, namapen, alamatpen, telppen).enqueue(object : Callback<Pengunjung> {
                         override fun onResponse(call: Call<Pengunjung>, response: Response<Pengunjung>) {
                             Log.d("response server", response.message())
 
@@ -67,6 +69,7 @@ class PengunjungApps : AppCompatActivity(), OnEditItemClikListener, OnDeleteItem
                                 nama!!.getText().clear()
                                 alamat!!.getText().clear()
                                 telp!!.getText().clear()
+                                action=""
 
                             }
                         }
@@ -77,7 +80,7 @@ class PengunjungApps : AppCompatActivity(), OnEditItemClikListener, OnDeleteItem
 
                     })
             }   else if (action.equals("editdata")) {
-                ConfigNetwork.getRetrofit(server!!).getEditPengunjung(action!!, namapen, alamatpen, telppen,kunjungid).enqueue(object : Callback<Pengunjung> {
+                ConfigNetwork.getRetrofit(server!!).getEditPengunjung(action!!,kunjungid, namapen, alamatpen, telppen).enqueue(object : Callback<Pengunjung> {
                     override fun onResponse(call: Call<Pengunjung>, response: Response<Pengunjung>) {
                         Log.d("response server", response.message())
 
@@ -89,6 +92,7 @@ class PengunjungApps : AppCompatActivity(), OnEditItemClikListener, OnDeleteItem
                             alamat!!.getText().clear()
                             telp!!.getText().clear()
                             pengunjungid!!.text=""
+                            action=""
 
                         }
                     }
@@ -147,8 +151,57 @@ class PengunjungApps : AppCompatActivity(), OnEditItemClikListener, OnDeleteItem
         alamat?.setText(item?.alamat)
         telp?.setText(item?.telp)
         pengunjungid?.setText(item?.idpengunjung)
-        action="deletedata"
+        showDialog()
     }
 
+    private fun showDialog(){
+        lateinit var dialog: AlertDialog
+        val namapen = nama!!.text.toString().trim { it <= ' ' }
+        val alamatpen = alamat!!.text.toString().trim { it <= ' ' }
+        val telppen = telp!!.text.toString().trim { it <= ' ' }
+        val kunjungid = pengunjungid!!.text.toString().trim{ it <= ' '}
+        action="deletedata"
 
+
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle("Pengunjung Apss")
+        builder.setMessage("Yakin akan menghapus data pengunjung?")
+
+        val dialogClickListener = DialogInterface.OnClickListener{ _, which ->
+            when(which){
+
+                DialogInterface.BUTTON_POSITIVE ->
+                    ConfigNetwork.getRetrofit(server!!).getDeletePengunjung(action!!,kunjungid, namapen, alamatpen, telppen).enqueue(object : Callback<Pengunjung> {
+                        override fun onResponse(call: Call<Pengunjung>, response: Response<Pengunjung>) {
+                            Log.d("response server", response.message())
+
+                            if (response.isSuccessful) {
+                                val hasilnya = response.body()?.pesan
+                                Toast.makeText(this@PengunjungApps, hasilnya, Toast.LENGTH_SHORT).show()
+                                AmbilData()
+                                nama!!.getText().clear()
+                                alamat!!.getText().clear()
+                                telp!!.getText().clear()
+                                pengunjungid!!.text=""
+                                action=""
+
+                            }
+                        }
+
+                        override fun onFailure(call: Call<Pengunjung>, t: Throwable) {
+                            Log.d("response server", t.message!!)
+                        }
+
+                    })
+
+                DialogInterface.BUTTON_NEGATIVE -> dialog.dismiss();
+            }
+        }
+
+
+        builder.setPositiveButton("YES",dialogClickListener)
+        builder.setNegativeButton("NO",dialogClickListener)
+        dialog = builder.create()
+        dialog.show()
+    }
 }
