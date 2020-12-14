@@ -50,10 +50,11 @@ class PengunjungApps : AppCompatActivity(), OnEditItemClikListener, OnDeleteItem
             val namapen = nama!!.text.toString().trim { it <= ' ' }
             val alamatpen = alamat!!.text.toString().trim { it <= ' ' }
             val telppen = telp!!.text.toString().trim { it <= ' ' }
-            val kunjungid = pengunjungid!!.text.toString().trim{ it <= ' '}
+            var kunjungid = pengunjungid!!.text.toString().trim{ it <= ' '}
 
             if (action.equals("")) {
                 action = "insertdata"
+                kunjungid="0"
             }
 
             if (action.equals("insertdata")) {

@@ -30,7 +30,7 @@ interface Service {
     @FormUrlEncoded
     @POST("udacoding/pengunjung.php?")
     fun getInsertPengunjung(@Field("action") action : String,
-                            @Field("id") id : String,
+                            @Field("kunjungid") kunjungid : String,
                             @Field("nama") nama : String,
                             @Field("alamat") alamat : String,
                             @Field("telp") telp : String): Call<Pengunjung>
